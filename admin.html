@@ -1,0 +1,62 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Área do clube · Tasca Beach Club</title>
+<meta name="robots" content="noindex, nofollow">
+<link rel="icon" type="image/png" href="favicon.png">
+<link rel="preload" as="font" type="font/woff2" href="fonts/bricolage-cond.woff2" crossorigin>
+<link rel="stylesheet" href="styles.css">
+<style>
+  body{ background:var(--sand); }
+  .adm{ max-width:1100px; margin:0 auto; padding:24px var(--gut) 80px; }
+  .adm-top{ display:flex; align-items:center; gap:12px; justify-content:space-between; background:var(--paper); border-radius:999px; padding:6px 6px 6px 10px; }
+  .adm-top a{ display:flex; align-items:center; gap:10px; text-decoration:none; font-weight:600; }
+  .adm-top img{ width:40px; height:40px; }
+  .adm-top .btn{ gap:8px; min-height:40px; padding:0 16px; color:var(--ink); }
+  .adm-top .btn svg{ width:16px; height:16px; }
+  .card{ background:var(--paper); border-radius:24px; padding:clamp(18px,3vw,28px); margin-top:16px; }
+  .login{ max-width:420px; margin:12vh auto 0; }
+  .f{ display:grid; gap:6px; margin-top:14px; }
+  .f label{ font:600 12px/1 var(--body); text-transform:uppercase; letter-spacing:.06em; color:var(--ink-2); }
+  .f input,.f select{ border:0; border-radius:14px; padding:13px 14px; font:500 16px/1.2 var(--body); background:var(--sand); color:var(--ink); width:100%; }
+  .tabs{ display:flex; gap:8px; flex-wrap:wrap; margin-top:20px; }
+  .tab{ border:0; cursor:pointer; border-radius:999px; padding:12px 16px; font:600 14px/1 var(--body); background:var(--paper); color:var(--ink); }
+  .tab[aria-selected=true]{ background:var(--ink); color:var(--paper); }
+  .row-h{ display:flex; flex-wrap:wrap; gap:12px; align-items:end; justify-content:space-between; }
+  table{ width:100%; border-collapse:collapse; font-size:15px; }
+  th{ text-align:left; font:600 12px/1 var(--body); text-transform:uppercase; letter-spacing:.06em; color:var(--ink-3); padding:10px 8px; border-bottom:1px solid var(--line); }
+  td{ padding:12px 8px; border-bottom:1px solid var(--line); vertical-align:middle; }
+  .st{ display:inline-flex; padding:6px 10px; border-radius:999px; font:600 12px/1 var(--body); }
+  .st.pendente{ background:var(--yellow); }
+  .st.confirmada{ background:#CFEDE8; color:var(--teal-ink); }
+  .st.cancelada{ background:#eee; color:#777; text-decoration:line-through; }
+  .st.bloqueio{ background:var(--ink); color:var(--paper); }
+  .mini{ border:0; cursor:pointer; border-radius:999px; padding:8px 12px; font:600 13px/1 var(--body); background:var(--sand); color:var(--ink); margin:2px; text-decoration:none; display:inline-block; }
+  .mini.ok{ background:var(--teal); color:#fff; }
+  .mini.no{ background:#FFE4DE; color:#7A1E10; }
+  .counts{ display:grid; grid-template-columns:repeat(3,1fr); gap:12px; margin-top:16px; }
+  .counts div{ background:var(--sand); border-radius:18px; padding:14px; }
+  .counts b{ display:block; font-family:var(--display); font-weight:800; font-size:40px; line-height:1; }
+  .hours{ display:grid; gap:10px; }
+  .hours .hrow{ display:grid; grid-template-columns:110px 1fr 1fr 110px; gap:8px; align-items:center; }
+  .note{ font-size:14px; color:var(--ink-2); }
+  .err{ background:#FFE4DE; color:#7A1E10; padding:12px 14px; border-radius:14px; margin-top:12px; }
+  .okm{ background:#CFEDE8; color:var(--teal-ink); padding:12px 14px; border-radius:14px; margin-top:12px; }
+  @media (max-width:640px){ .hide-sm{ display:none; } .hours .hrow{ grid-template-columns:80px 1fr 1fr; } .hours .hrow label:last-child{ grid-column:1/-1; } }
+</style>
+</head>
+<body>
+<div class="adm">
+  <div class="adm-top">
+    <a href="index.html"><img src="img/logo-96.png" alt="">Área do clube</a>
+    <button class="btn btn-ghost btn-sm" id="out" type="button" hidden><svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M6 2.5H3.5a1 1 0 0 0-1 1v9a1 1 0 0 0 1 1H6M10.5 11 13.5 8l-3-3M13.5 8H6"/></svg>Sair</button>
+  </div>
+  <div id="app"></div>
+</div>
+<script src="config.js"></script>
+<script src="booking.js"></script>
+<script src="admin.js"></script>
+</body>
+</html>
